@@ -1,0 +1,17 @@
+[Unit]
+Description=Immich Server Avahi
+
+[Container]
+Image=docker.io/flungo/avahi:latest
+AutoUpdate=registry
+EnvironmentFile=/etc/containers/systemd/env/immich.env
+Pod=immich-server.pod
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

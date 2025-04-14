@@ -1,0 +1,21 @@
+[Unit]
+Description=Home Assistant
+
+[Container]
+Image=ghcr.io/home-assistant/home-assistant:stable
+AutoUpdate=registry
+Volume=home-assistant-config.volume:/config
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/run/dbus:/run/dbus:ro
+AddDevice=/dev/ttyUSB0:rw
+Network=end0_vlan.network
+SecurityLabelDisable=true
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

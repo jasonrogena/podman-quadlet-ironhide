@@ -1,0 +1,4 @@
+[Network]
+Internal=false
+NetworkName=unifi-network-application
+Subnet=192.168.101.0/24

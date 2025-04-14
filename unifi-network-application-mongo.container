@@ -1,0 +1,20 @@
+[Unit]
+Description=Unifi Network Application MongoDB
+
+[Container]
+Image=docker.io/mongo:latest
+AutoUpdate=registry
+Network=unifi-network-application.network
+EnvironmentFile=/etc/containers/systemd/env/unifi-network-application.env
+Volume=unifi-network-application-mongo-db.volume:/data/db
+Volume=/etc/containers/systemd/volume-data/unifi-network-application-mongo/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
+Volume=/etc/localtime:/etc/localtime:ro
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

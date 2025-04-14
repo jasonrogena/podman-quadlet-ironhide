@@ -1,0 +1,10 @@
+[Network]
+Driver=macvlan
+NetworkName=end0_vlan
+Subnet=192.168.10.0/24
+IPRange=192.168.10.50/27
+Gateway=192.168.10.1
+IPAMDriver=host-local
+Options=parent=end0
+Options=mode=bridge
+

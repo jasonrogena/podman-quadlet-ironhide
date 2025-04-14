@@ -1,0 +1,19 @@
+[Unit]
+Description=Immich Server
+Requires=immich-redis.service immich-machine-learning.service immich-postgres.service
+
+[Container]
+Image=ghcr.io/immich-app/immich-server:release
+AutoUpdate=registry
+EnvironmentFile=/etc/containers/systemd/env/immich.env
+SecurityLabelDisable=true
+Pod=immich-server.pod
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

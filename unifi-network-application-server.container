@@ -1,0 +1,21 @@
+[Unit]
+Description=Unifi Network Application
+Requires=unifi-network-application-mongo.container
+
+[Container]
+Image=docker.io/linuxserver/unifi-network-application:latest
+AutoUpdate=registry
+Network=unifi-network-application.network
+Network=end0_vlan.network
+EnvironmentFile=/etc/containers/systemd/env/unifi-network-application.env
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=unifi-network-application-server-config.volume:/config
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

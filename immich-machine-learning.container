@@ -1,0 +1,17 @@
+[Unit]
+Description=Immich Machine Learning
+
+[Container]
+Image=ghcr.io/immich-app/immich-machine-learning:release
+AutoUpdate=registry
+Volume=immich-machine-learning-cache:/cache
+EnvironmentFile=/etc/containers/systemd/env/immich.env
+Network=immich.network
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

@@ -1,0 +1,19 @@
+[Unit]
+Description=Tailscale
+
+[Container]
+Image=ghcr.io/tailscale/tailscale:latest
+AutoUpdate=registry
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=tailscale-state.volume:/var/lib/tailscale
+Network=end0_vlan.network
+EnvironmentFile=/etc/containers/systemd/env/tailscale.env
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

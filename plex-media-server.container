@@ -1,0 +1,23 @@
+[Unit]
+Description=Plex Media Server
+
+[Container]
+Image=docker.io/plexinc/pms-docker:latest
+AutoUpdate=registry
+Volume=/mnt/md0/media:/mnt/media
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=plex-media-server-config.volume:/config
+Volume=plex-media-server-transcode.volume:/transcode
+Network=end0_vlan.network
+SecurityLabelDisable=true
+HealthCmd=/healthcheck.sh
+EnvironmentFile=/etc/containers/systemd/env/plex-media-server.env
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

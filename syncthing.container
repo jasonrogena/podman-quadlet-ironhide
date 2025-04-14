@@ -1,0 +1,20 @@
+[Unit]
+Description=Syncthing
+
+[Container]
+Image=docker.io/syncthing/syncthing:latest
+AutoUpdate=registry
+Volume=/mnt/md0/syncthing:/var/syncthing
+Volume=/etc/localtime:/etc/localtime:ro
+Network=end0_vlan.network
+HealthCmd=curl -fkLsS -m 2 127.0.0.1:8384/rest/noauth/health | grep -o --color=never OK || exit 1
+SecurityLabelDisable=true
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

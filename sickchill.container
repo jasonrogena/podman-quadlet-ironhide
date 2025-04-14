@@ -1,0 +1,20 @@
+[Unit]
+Description=Sickchill
+
+[Container]
+Image=docker.io/sickchill/sickchill:latest
+AutoUpdate=registry
+Volume=sickchill-data.volume:/data
+Volume=sickchill-cache.volume:/cache
+Volume=sickchill-downloads.volume:/downloads
+Volume=/etc/localtime:/etc/localtime:ro
+Network=end0_vlan.network
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

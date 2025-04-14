@@ -1,0 +1,24 @@
+[Unit]
+Description=yarr
+
+[Container]
+# To build the container run:
+#   git clone https://github.com/nkanaev/yarr.git
+#   cd yarr
+#   git checkout <latest release>
+#   podman build -t yarr:latest -f etc/dockerfile .
+Image=localhost/yarr:latest
+AutoUpdate=registry
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=yarr-data.volume:/data
+Network=end0_vlan.network
+EnvironmentFile=/etc/containers/systemd/env/yarr.env
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

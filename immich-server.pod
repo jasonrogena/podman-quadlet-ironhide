@@ -1,0 +1,5 @@
+[Pod]
+Volume=/mnt/md0/immich:/usr/src/app/upload
+Volume=/etc/localtime:/etc/localtime:ro
+Network=immich.network
+Network=end0_vlan.network
