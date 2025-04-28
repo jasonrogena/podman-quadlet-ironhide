@@ -1,0 +1,19 @@
+[Unit]
+Description=Media Downloader Put.IO CLI
+
+[Container]
+Image=localhost/putio:latest
+AutoUpdate=registry
+SecurityLabelDisable=true
+EnvironmentFile=/etc/containers/systemd/env/media-downloader-putio.env
+Exec=/scripts/download.sh
+Pod=media-downloader.pod
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

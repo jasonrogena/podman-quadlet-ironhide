@@ -1,0 +1,13 @@
+
+[libraries.shows]
+command = """
+echo "Processing {{ file_path }}"
+/scripts/rename-show-episode.py "{{ file_path }}" "/mnt/media/tv-shows"
+"""
+
+  [libraries.shows.filter]
+  directories = [ "/mnt/media/downloads" ]
+  mime_type_regexes = [ "video/.+", "application/octet-stream" ]
+
+[fs_watch]
+min_command_exec_freq = 60

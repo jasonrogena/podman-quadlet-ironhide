@@ -1,0 +1,5 @@
+[Pod]
+Volume=/mnt/md0/media:/mnt/media
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/systemd/volume-data/media-downloader/fs-librarian:/fs-librarian
+Volume=/etc/containers/systemd/volume-data/media-downloader/scripts:/scripts

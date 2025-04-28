@@ -1,0 +1,19 @@
+[Unit]
+Description=Media Downloader Librarian
+
+[Container]
+#Image=ghcr.io/jasonrogena/librarian:latest
+Image=localhost/jasonrogena/librarian:latest
+AutoUpdate=registry
+SecurityLabelDisable=true
+Exec=watch /fs-librarian/config.toml
+Pod=media-downloader.pod
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+
