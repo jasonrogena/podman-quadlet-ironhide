@@ -6,6 +6,7 @@ Description=Media Downloader Librarian
 Image=localhost/jasonrogena/librarian:latest
 AutoUpdate=registry
 SecurityLabelDisable=true
+AddCapability=CAP_SYS_ADMIN
 Exec=watch /fs-librarian/config.toml
 Pod=media-downloader.pod
 
