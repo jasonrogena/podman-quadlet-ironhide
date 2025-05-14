@@ -8,7 +8,7 @@ Description=yarr
 #   git checkout <latest release>
 #   podman build -t yarr:latest -f etc/dockerfile .
 Image=localhost/yarr:latest
-AutoUpdate=registry
+AutoUpdate=local
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=yarr-data.volume:/data
 Network=end0_vlan.network

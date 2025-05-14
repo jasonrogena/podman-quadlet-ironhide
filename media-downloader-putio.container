@@ -3,7 +3,7 @@ Description=Media Downloader Put.IO CLI
 
 [Container]
 Image=localhost/putio:latest
-AutoUpdate=registry
+AutoUpdate=local
 SecurityLabelDisable=true
 EnvironmentFile=/etc/containers/systemd/env/media-downloader-putio.env
 Exec=/scripts/download.sh

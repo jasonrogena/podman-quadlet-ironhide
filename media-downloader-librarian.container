@@ -2,8 +2,7 @@
 Description=Media Downloader Librarian
 
 [Container]
-#Image=ghcr.io/jasonrogena/librarian:latest
-Image=localhost/jasonrogena/librarian:latest
+Image=ghcr.io/jasonrogena/librarian:latest
 AutoUpdate=registry
 SecurityLabelDisable=true
 AddCapability=CAP_SYS_ADMIN

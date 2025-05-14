@@ -6,8 +6,8 @@ echo "Processing {{ file_path }}"
 """
 
   [libraries.shows.filter]
-  directories = [ "/mnt/media/downloads" ]
+  directories = [ "/mnt/media/downloads/completed" ]
   mime_type_regexes = [ "video/.+", "application/octet-stream" ]
 
 [fs_watch]
-min_command_exec_freq = 60
+min_command_exec_freq = 1
