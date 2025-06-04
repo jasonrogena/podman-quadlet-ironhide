@@ -3,7 +3,7 @@
 download_from_folder() {
   /usr/bin/putio "$PUTIO_OAUTH_TOKEN" "$1" 5 5 | /usr/bin/xargs /usr/bin/aria2c -x 5 --auto-file-renaming=false --allow-overwrite=false
   /usr/bin/putio "$PUTIO_OAUTH_TOKEN" "$1" 5 5
-  sleep_sec=120
+  sleep_sec=60
   echo "Sleeping for $sleep_sec seconds"
   sleep "$sleep_sec"
 }
