@@ -1,0 +1,4 @@
+[Network]
+Internal=false
+NetworkName=prometheus
+Subnet=192.168.102.0/24

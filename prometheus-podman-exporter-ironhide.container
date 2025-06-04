@@ -1,0 +1,27 @@
+[Unit]
+Description=Prometheus Podman Exporter
+
+[Container]
+Image=quay.io/navidys/prometheus-podman-exporter:latest
+AutoUpdate=registry
+SecurityLabelDisable=true
+Volume=/:/host:ro
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/run/podman/podman.sock:/run/podman/podman.sock
+Network=prometheus.network
+Exec=--collector.image --collector.network --collector.pod --collector.volume
+# Will require that on the host you create a mixin for the podman.socket unit with:
+#  [Socket]
+#  ListenStream=%t/podman/podman.sock
+#  SocketMode=0660
+# Then run:
+#  systemctl daemon-reload && systemctl enable podman.socket && systemctl start podman.socket
+Environment=CONTAINER_HOST=unix:///run/podman/podman.sock
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

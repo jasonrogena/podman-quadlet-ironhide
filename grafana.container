@@ -1,0 +1,19 @@
+[Unit]
+Description=Grafana
+
+[Container]
+Image=docker.io/grafana/grafana-enterprise:latest
+AutoUpdate=registry
+SecurityLabelDisable=true
+Volume=/mnt/md0/grafana:/var/lib/grafana
+Volume=/etc/localtime:/etc/localtime:ro
+Network=prometheus.network
+Network=end0_vlan.network
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

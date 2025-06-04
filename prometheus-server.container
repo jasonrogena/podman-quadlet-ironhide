@@ -1,0 +1,19 @@
+[Unit]
+Description=Prometheus Server
+
+[Container]
+Image=quay.io/prometheus/prometheus:latest
+AutoUpdate=registry
+SecurityLabelDisable=true
+Volume=/mnt/md0/prometheus:/prometheus
+Volume=/etc/containers/systemd/volume-data/prometheus-server/config:/etc/prometheus
+Volume=/etc/localtime:/etc/localtime:ro
+Network=prometheus.network
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
