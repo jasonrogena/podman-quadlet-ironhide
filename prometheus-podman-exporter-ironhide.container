@@ -12,8 +12,8 @@ Network=prometheus.network
 Exec=--collector.image --collector.network --collector.pod --collector.volume
 # Will require that on the host you create a mixin for the podman.socket unit with:
 #  [Socket]
-#  ListenStream=%t/podman/podman.sock
-#  SocketMode=0660
+#  SocketMode=0666
+#
 # Then run:
 #  systemctl daemon-reload && systemctl enable podman.socket && systemctl start podman.socket
 Environment=CONTAINER_HOST=unix:///run/podman/podman.sock
