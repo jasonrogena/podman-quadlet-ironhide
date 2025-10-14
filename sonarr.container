@@ -1,19 +1,21 @@
 [Unit]
-Description=Plex Media Server
+Description=Sonarr
 
 [Container]
-Image=docker.io/plexinc/pms-docker:latest
+Image=lscr.io/linuxserver/sonarr:latest
 AutoUpdate=registry
 Volume=/mnt/md0/media:/mnt/media
 Volume=/etc/localtime:/etc/localtime:ro
-Volume=plex-media-server-config.volume:/config
-Volume=plex-media-server-transcode.volume:/transcode
+Volume=sonarr-config.volume:/config
+Volume=/mnt/md0/media/tv-shows:/tv-shows
+Volume=/mnt/md0/media/downloads/arr:/downloads
 Network=end0_vlan.network
 Network=plex-media-server.network
+Network=arr.network
 SecurityLabelDisable=true
-HealthCmd=/healthcheck.sh
-EnvironmentFile=/etc/containers/systemd/env/plex-media-server.env
-HostName=plex-media-server
+Environment=PUID=1000
+Environment=PGID=1000
+HostName=sonarr
 
 [Service]
 TimeoutStartSec=900

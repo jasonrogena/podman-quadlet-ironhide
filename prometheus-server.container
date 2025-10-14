@@ -9,6 +9,7 @@ Volume=/mnt/md0/prometheus:/prometheus
 Volume=/etc/containers/systemd/volume-data/prometheus-server/config:/etc/prometheus
 Volume=/etc/localtime:/etc/localtime:ro
 Network=prometheus.network
+Network=end0_vlan.network
 
 [Service]
 TimeoutStartSec=900

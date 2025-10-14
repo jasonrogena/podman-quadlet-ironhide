@@ -7,8 +7,9 @@ AutoUpdate=registry
 SecurityLabelDisable=true
 Volume=/mnt/md0/grafana:/var/lib/grafana
 Volume=/etc/localtime:/etc/localtime:ro
-Network=prometheus.network
 Network=end0_vlan.network
+Network=prometheus.network
+HostName=grafana
 
 [Service]
 TimeoutStartSec=900

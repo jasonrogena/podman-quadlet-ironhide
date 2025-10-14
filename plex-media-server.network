@@ -1,0 +1,4 @@
+[Network]
+Internal=false
+NetworkName=plex-media-server
+Subnet=192.168.103.0/24

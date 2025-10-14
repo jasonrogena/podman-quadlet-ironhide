@@ -1,17 +1,19 @@
 [Unit]
-Description=Home Assistant
+Description=Sabnzbd
 
 [Container]
-Image=ghcr.io/home-assistant/home-assistant:stable
+Image=lscr.io/linuxserver/sabnzbd:latest
 AutoUpdate=registry
-Volume=home-assistant-config.volume:/config
+Volume=/mnt/md0/media:/mnt/media
 Volume=/etc/localtime:/etc/localtime:ro
-Volume=/run/dbus:/run/dbus:ro
-AddCapability=NET_ADMIN NET_RAW
-AddDevice=/dev/ttyUSB0:rw
+Volume=sabnzbd-config.volume:/config
+Volume=/mnt/md0/media/downloads/arr:/downloads
 Network=end0_vlan.network
+Network=arr.network
 SecurityLabelDisable=true
-HostName=home-assistant
+Environment=PUID=1000
+Environment=PGID=1000
+HostName=sabnzbd
 
 [Service]
 TimeoutStartSec=900

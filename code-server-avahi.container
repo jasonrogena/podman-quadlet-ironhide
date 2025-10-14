@@ -1,0 +1,17 @@
+[Unit]
+Description=Code Server Avahi
+
+[Container]
+Image=docker.io/flungo/avahi:latest
+AutoUpdate=registry
+Pod=code-server.pod
+EnvironmentFile=/etc/containers/systemd/env/code-server.env
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

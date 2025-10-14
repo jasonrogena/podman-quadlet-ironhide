@@ -9,6 +9,7 @@ Volume=/etc/localtime:/etc/localtime:ro
 Network=end0_vlan.network
 HealthCmd=curl -fkLsS -m 2 127.0.0.1:8384/rest/noauth/health | grep -o --color=never OK || exit 1
 SecurityLabelDisable=true
+HostName=syncthing
 
 [Service]
 TimeoutStartSec=900

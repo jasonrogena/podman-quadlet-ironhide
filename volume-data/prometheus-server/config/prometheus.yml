@@ -9,6 +9,10 @@ scrape_configs:
         labels:
           nodename: ironhide
           domainname: nodes.rogena.me
+      - targets: ['192.168.10.3:9100']
+        labels:
+          nodename: wheelie
+          domainname: nodes.rogena.me
   - job_name: 'podman'
     static_configs:
       - targets: ['systemd-prometheus-podman-exporter-ironhide:9882']

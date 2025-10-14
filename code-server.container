@@ -1,13 +1,12 @@
 [Unit]
-Description=Media Downloader Librarian
+Description=Code Server
 
 [Container]
-Image=ghcr.io/jasonrogena/librarian:latest
+Image=lscr.io/linuxserver/code-server:latest
 AutoUpdate=registry
 SecurityLabelDisable=true
-AddCapability=CAP_SYS_ADMIN
-Exec=watch /fs-librarian/config.toml
-Pod=media-downloader.pod
+Pod=code-server.pod
+EnvironmentFile=/etc/containers/systemd/env/code-server.env
 
 [Service]
 TimeoutStartSec=900

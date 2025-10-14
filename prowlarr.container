@@ -1,14 +1,16 @@
 [Unit]
-Description=Sickchill
+Description=Prowlarr
 
 [Container]
-Image=docker.io/sickchill/sickchill:latest
+Image=lscr.io/linuxserver/prowlarr:latest
 AutoUpdate=registry
-Volume=sickchill-data.volume:/data
-Volume=sickchill-cache.volume:/cache
-Volume=sickchill-downloads.volume:/downloads
 Volume=/etc/localtime:/etc/localtime:ro
+Volume=prowlarr-config.volume:/config
 Network=end0_vlan.network
+Network=arr.network
+Environment=PUID=1000
+Environment=PGID=1000
+HostName=prowlarr
 
 [Service]
 TimeoutStartSec=900

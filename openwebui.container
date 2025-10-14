@@ -1,14 +1,13 @@
 [Unit]
-Description=Tailscale
+Description=Open WebUI
 
 [Container]
-Image=ghcr.io/tailscale/tailscale:latest
+Image=ghcr.io/open-webui/open-webui:main
 AutoUpdate=registry
+Volume=openwebui-data.volume:/app/backend/data
 Volume=/etc/localtime:/etc/localtime:ro
-Volume=tailscale-state.volume:/var/lib/tailscale
 Network=end0_vlan.network
-EnvironmentFile=/etc/containers/systemd/env/tailscale.env
-HostName=tailscale
+HostName=openwebui
 
 [Service]
 TimeoutStartSec=900

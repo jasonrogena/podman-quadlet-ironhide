@@ -10,6 +10,7 @@ Network=end0_vlan.network
 EnvironmentFile=/etc/containers/systemd/env/unifi-network-application.env
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=unifi-network-application-server-config.volume:/config
+HostName=unifi-network-application-server
 
 [Service]
 TimeoutStartSec=900

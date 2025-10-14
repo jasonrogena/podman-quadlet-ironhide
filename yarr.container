@@ -13,6 +13,7 @@ Volume=/etc/localtime:/etc/localtime:ro
 Volume=yarr-data.volume:/data
 Network=end0_vlan.network
 EnvironmentFile=/etc/containers/systemd/env/yarr.env
+HostName=yarr
 
 [Service]
 TimeoutStartSec=900
