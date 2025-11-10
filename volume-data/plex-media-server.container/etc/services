@@ -1,0 +1,7 @@
+roku	8324/tcp
+ui	32400/tcp	default_http_authenticated
+dlna	32469/tcp
+gdm-0	32410/udp
+gdm-2	32412/udp
+gdm-3	32413/udp
+gdm-4	32414/udp

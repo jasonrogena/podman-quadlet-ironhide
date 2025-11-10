@@ -8,6 +8,7 @@ Volume=/mnt/md0/media:/mnt/media
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=plex-media-server-config.volume:/config
 Volume=plex-media-server-transcode.volume:/transcode
+Volume=/etc/containers/systemd/volume-data/plex-media-server.container/etc/services:/etc/services:ro
 Network=end0_vlan.network
 Network=plex-media-server.network
 SecurityLabelDisable=true

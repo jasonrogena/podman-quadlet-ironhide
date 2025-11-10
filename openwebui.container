@@ -6,6 +6,7 @@ Image=ghcr.io/open-webui/open-webui:main
 AutoUpdate=registry
 Volume=openwebui-data.volume:/app/backend/data
 Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/systemd/volume-data/openwebui.container/etc/services:/etc/services:ro
 Network=end0_vlan.network
 HostName=openwebui
 

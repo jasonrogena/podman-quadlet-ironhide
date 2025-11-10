@@ -7,8 +7,10 @@ AutoUpdate=registry
 Network=unifi-network-application.network
 EnvironmentFile=/etc/containers/systemd/env/unifi-network-application.env
 Volume=unifi-network-application-mongo-db.volume:/data/db
-Volume=/etc/containers/systemd/volume-data/unifi-network-application-mongo/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
+Volume=/etc/containers/systemd/volume-data/unifi-network-application-mongo.container/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
+Volume=/etc/containers/systemd/volume-data/unifi-network-application-mongo.container/etc/services:/etc/services:ro
 Volume=/etc/localtime:/etc/localtime:ro
+HostName=unifi-mongo
 
 [Service]
 TimeoutStartSec=900

@@ -9,6 +9,7 @@ Volume=/etc/localtime:/etc/localtime:ro
 Volume=sonarr-config.volume:/config
 Volume=/mnt/md0/media/tv-shows:/tv-shows
 Volume=/mnt/md0/media/downloads/arr:/downloads
+Volume=/etc/containers/systemd/volume-data/sonarr.container/etc/services:/etc/services:ro
 Network=end0_vlan.network
 Network=plex-media-server.network
 Network=arr.network

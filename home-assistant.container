@@ -7,6 +7,7 @@ AutoUpdate=registry
 Volume=home-assistant-config.volume:/config
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/run/dbus:/run/dbus:ro
+Volume=/etc/containers/systemd/volume-data/home-assistant.container/etc/services:/etc/services:ro
 AddCapability=NET_ADMIN NET_RAW
 AddDevice=/dev/ttyUSB0:rw
 Network=end0_vlan.network

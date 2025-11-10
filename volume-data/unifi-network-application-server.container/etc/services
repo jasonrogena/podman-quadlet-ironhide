@@ -1,0 +1,2 @@
+guest-portal-http	8080/tcp
+guest-portal-https	8443/tcp	default_https_authenticated

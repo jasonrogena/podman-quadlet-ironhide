@@ -1,7 +1,0 @@
-[Pod]
-Volume=/mnt/md0/src:/src
-Volume=/etc/localtime:/etc/localtime:ro
-Volume=code-server-config.volume:/config
-Volume=/etc/containers/systemd/volume-data/code-server/allowed_ssh_keys:/allowed_ssh_keys
-Network=end0_vlan.network
-HostName=code-server

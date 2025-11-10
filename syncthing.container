@@ -6,6 +6,7 @@ Image=docker.io/syncthing/syncthing:latest
 AutoUpdate=registry
 Volume=/mnt/md0/syncthing:/var/syncthing
 Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/systemd/volume-data/syncthing.container/etc/services:/etc/services:ro
 Network=end0_vlan.network
 HealthCmd=curl -fkLsS -m 2 127.0.0.1:8384/rest/noauth/health | grep -o --color=never OK || exit 1
 SecurityLabelDisable=true

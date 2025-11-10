@@ -11,6 +11,7 @@ Image=localhost/yarr:latest
 AutoUpdate=local
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=yarr-data.volume:/data
+Volume=/etc/containers/systemd/volume-data/yarr.container/etc/services:/etc/services:ro
 Network=end0_vlan.network
 EnvironmentFile=/etc/containers/systemd/env/yarr.env
 HostName=yarr
