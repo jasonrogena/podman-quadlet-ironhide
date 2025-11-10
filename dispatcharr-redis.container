@@ -1,0 +1,20 @@
+[Unit]
+Description=Dispatcharr
+
+[Container]
+Image=docker.io/redis:latest
+AutoUpdate=registry
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/systemd/volume-data/dispatcharr-redis.container/etc/services:/etc/services:ro
+Network=dispatcharr.network
+SecurityLabelDisable=true
+HostName=dispatcharr-redis
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

@@ -1,0 +1,25 @@
+[Unit]
+Description=Dispatcharr
+Requires=dispatcharr-redis.service dispatcharr-postgres.service
+
+[Container]
+Image=ghcr.io/dispatcharr/dispatcharr:latest
+AutoUpdate=registry
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/systemd/volume-data/dispatcharr.container/etc/services:/etc/services:ro
+Volume=/mnt/md0/dispatcharr:/data
+Network=end0_vlan.network
+Network=plex-media-server.network
+Network=dispatcharr.network
+SecurityLabelDisable=true
+HostName=dispatcharr
+EnvironmentFile=/etc/containers/systemd/env/dispatcharr.container.env
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+
