@@ -1,0 +1,56 @@
+[schedule]
+cron = "0 5 * * *"
+
+[webserver]
+host = "0.0.0.0"
+port = 8080
+username_env = "BRIEFING_USERNAME"
+password_env = "BRIEFING_PASSWORD"
+
+[[inputs]]
+name = "energy"
+type = "home_assistant_energy"
+url = "https://home-assistant.apps.rogena.me"
+token_env = "HA_TOKEN"
+hours = 24  # length of each comparison window (default: 24)
+
+[[inputs.entities]]
+id = "sensor.electricity_monitor_total_consumption_current_hour"
+label = "Grid Consumption"
+
+[[inputs.entities]]
+id = "sensor.ev_charger_total_consumption_current_hour"
+label = "Car Charger"
+
+[[inputs.entities]]
+id = "sensor.electricity_monitor_total_production_current_hour"
+label = "Solar Production"
+
+[[inputs]]
+name = "rss_feed"
+type = "fever"
+url = "https://yarr.apps.rogena.me/fever/"
+username_env = "FEVER_USERNAME"
+password_env = "FEVER_PASSWORD"
+# How many hours back to fetch items (default: 24)
+hours = 24
+mark_as_read = true
+
+[processor]
+type = "anthropic"
+api_key_env = "ANTHROPIC_API_KEY"
+model = "claude-opus-4-6"
+max_tokens = 1024
+prompt = "Summarize the following content into a concise daily briefing. Focus on the most important information and group related topics together. The briefing should be just paragraphs and readable as a podcast"
+
+[[outputs]]
+name = "webpage"
+type = "webpage"
+endpoint = "/"
+title = "Daily Briefing"
+
+[[outputs]]
+name = "speech"
+type = "speech"
+endpoint = "/speech"
+model = "/etc/daily-briefing/voices/en_GB-vctk-medium.onnx"

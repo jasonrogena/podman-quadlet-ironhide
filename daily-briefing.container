@@ -1,0 +1,22 @@
+[Unit]
+Description=daily-briefing
+
+[Container]
+# To build the container run:
+#   cd /mnt/md0/src/daily-briefing
+#   podman build -t daily-briefing:latest .
+Image=localhost/daily-briefing:latest
+AutoUpdate=local
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/systemd/volume-data/daily-briefing.container/etc/daily-briefing:/etc/daily-briefing:ro
+Volume=/etc/containers/systemd/volume-data/daily-briefing.container/etc/services:/etc/services:ro
+Network=end0_vlan.network
+EnvironmentFile=/etc/containers/systemd/env/daily-briefing.env
+HostName=daily-briefing
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target

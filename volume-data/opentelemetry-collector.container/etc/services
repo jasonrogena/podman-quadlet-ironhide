@@ -1,0 +1,2 @@
+otlp-grpc	4317/tcp
+prometheus	9090/tcp	default_http_authenticated

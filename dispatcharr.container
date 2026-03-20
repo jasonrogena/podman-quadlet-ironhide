@@ -1,9 +1,9 @@
 [Unit]
 Description=Dispatcharr
-Requires=dispatcharr-redis.service dispatcharr-postgres.service
+Requires=dispatcharr-redis.service
 
 [Container]
-Image=ghcr.io/dispatcharr/dispatcharr:latest
+Image=ghcr.io/dispatcharr/dispatcharr:0.8.0
 AutoUpdate=registry
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/etc/containers/systemd/volume-data/dispatcharr.container/etc/services:/etc/services:ro

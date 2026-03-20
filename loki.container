@@ -1,0 +1,21 @@
+[Unit]
+Description=Loki
+
+[Container]
+Image=docker.io/grafana/loki:latest
+AutoUpdate=registry
+SecurityLabelDisable=true
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=loki-data.volume:/loki
+Volume=/etc/containers/systemd/volume-data/loki.container/etc/loki/local-config.yaml:/etc/loki/local-config.yaml:ro
+Volume=/etc/containers/systemd/volume-data/loki.container/etc/services:/etc/services:ro
+Network=observability.network
+HostName=loki
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

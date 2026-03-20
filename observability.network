@@ -1,0 +1,4 @@
+[Network]
+Internal=false
+NetworkName=observability
+Subnet=192.168.102.0/24

@@ -1,0 +1,24 @@
+[Unit]
+Description=OpenTelemetry Collector
+
+[Container]
+Image=docker.io/otel/opentelemetry-collector-contrib:latest
+AutoUpdate=registry
+SecurityLabelDisable=true
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/machine-id:/etc/machine-id:ro
+Volume=/run/log/journal:/run/log/journal:ro
+Volume=/var/log/journal:/var/log/journal:ro
+Volume=/etc/containers/systemd/volume-data/opentelemetry-collector.container/config:/etc/otelcol:ro
+Volume=/etc/containers/systemd/volume-data/opentelemetry-collector.container/etc/services:/etc/services:ro
+Network=end0_vlan.network
+Network=observability.network
+HostName=otel-collector
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

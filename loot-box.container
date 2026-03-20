@@ -1,0 +1,23 @@
+[Unit]
+Description=Loot Box
+
+[Container]
+Image=docker.io/python:latest
+AutoUpdate=registry
+Volume=/mnt/md0/media/downloads/arr/complete/tv-shows/Sanae.matseon.S01.1080p.NF.WEB-DL.AAC2.0.H.264-playWEB:/downloads
+Volume=/etc/containers/systemd/volume-data/loot-box.container/etc/services:/etc/services:ro
+Network=end0_vlan.network
+Environment=PUID=1000
+Environment=PGID=1000
+HostName=jlkdbklixsybpaq
+SecurityLabelDisable=true
+Exec=python -m http.server --directory=/downloads 8000
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
+

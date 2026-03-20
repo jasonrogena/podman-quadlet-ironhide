@@ -1,0 +1,22 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+  journald:
+    directory: /run/log/journal
+
+exporters:
+  prometheus:
+    endpoint: 0.0.0.0:9090
+  otlphttp/loki:
+    endpoint: http://loki:3100/otlp
+
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      exporters: [prometheus]
+    logs:
+      receivers: [journald]
+      exporters: [otlphttp/loki]

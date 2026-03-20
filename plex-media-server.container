@@ -2,10 +2,11 @@
 Description=Plex Media Server
 
 [Container]
-Image=docker.io/plexinc/pms-docker:latest
+Image=docker.io/linuxserver/plex:latest
 AutoUpdate=registry
 Volume=/mnt/md0/media:/mnt/media
 Volume=/etc/localtime:/etc/localtime:ro
+Volume=/dev/dri:/dev/dri
 Volume=plex-media-server-config.volume:/config
 Volume=plex-media-server-transcode.volume:/transcode
 Volume=/etc/containers/systemd/volume-data/plex-media-server.container/etc/services:/etc/services:ro
@@ -14,7 +15,7 @@ Network=plex-media-server.network
 SecurityLabelDisable=true
 HealthCmd=/healthcheck.sh
 EnvironmentFile=/etc/containers/systemd/env/plex-media-server.env
-HostName=plex-media-server
+HostName=plex
 
 [Service]
 TimeoutStartSec=900
