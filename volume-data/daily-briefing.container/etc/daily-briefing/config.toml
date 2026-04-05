@@ -8,8 +8,8 @@ username_env = "BRIEFING_USERNAME"
 password_env = "BRIEFING_PASSWORD"
 
 [[inputs]]
-name = "energy"
-type = "home_assistant_energy"
+name = "home_health"
+type = "home_assistant_metrics"
 url = "https://home-assistant.apps.rogena.me"
 token_env = "HA_TOKEN"
 hours = 24  # length of each comparison window (default: 24)
@@ -25,6 +25,36 @@ label = "Car Charger"
 [[inputs.entities]]
 id = "sensor.electricity_monitor_total_production_current_hour"
 label = "Solar Production"
+
+[[inputs.entities]]
+id = "sensor.hue_motion_sensor_1_battery"
+label = "Hue Motion Sensor Battery Level"
+kind = "gauge"
+
+[[inputs.entities]]
+id = "sensor.hue_motion_sensor_2_battery"
+label = "Hue Motion Sensor Battery Level"
+kind = "gauge"
+
+[[inputs.entities]]
+id = "sensor.hue_motion_sensor_3_battery"
+label = "Hue Motion Sensor Battery Level"
+kind = "gauge"
+
+[[inputs.entities]]
+id = "sensor.hue_motion_sensor_4_battery"
+label = "Hue Motion Sensor Battery Level"
+kind = "gauge"
+
+[[inputs.entities]]
+id = "sensor.living_room_window_blind_battery"
+label = "Living Room Blind Battery Level"
+kind = "gauge"
+
+[[inputs.entities]]
+id = "sensor.master_bedroom_window_blind_battery"
+label = "Primary Bedroom Blind Battery Level"
+kind = "gauge"
 
 [[inputs]]
 name = "rss_feed"

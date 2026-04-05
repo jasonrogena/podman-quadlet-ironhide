@@ -2,10 +2,7 @@
 Description=daily-briefing
 
 [Container]
-# To build the container run:
-#   cd /mnt/md0/src/daily-briefing
-#   podman build -t daily-briefing:latest .
-Image=localhost/daily-briefing:latest
+Image=ghcr.io/jasonrogena/daily-briefing:latest
 AutoUpdate=local
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/etc/containers/systemd/volume-data/daily-briefing.container/etc/daily-briefing:/etc/daily-briefing:ro
