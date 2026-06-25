@@ -17,6 +17,7 @@ HostName=home-assistant
 [Service]
 TimeoutStartSec=900
 Restart=always
+ExecStartPre=/bin/bash -c 'HACS_DIR=/var/lib/containers/storage/volumes/systemd-home-assistant-config/_data/custom_components/hacs; if [ ! -d "$HACS_DIR" ]; then mkdir -p "$HACS_DIR" && curl -fsSL -o /tmp/hacs.zip https://github.com/hacs/integration/releases/latest/download/hacs.zip && unzip -q /tmp/hacs.zip -d "$HACS_DIR" && rm /tmp/hacs.zip; fi'
 
 [Install]
 # Start by default on boot

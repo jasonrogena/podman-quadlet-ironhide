@@ -27,23 +27,23 @@ id = "sensor.electricity_monitor_total_production_current_hour"
 label = "Solar Production"
 
 [[inputs.entities]]
-id = "sensor.hue_motion_sensor_1_battery"
-label = "Hue Motion Sensor Battery Level"
+id = "sensor.primary_bathroom_motion_sensor_battery"
+label = "Primary Bathroom Motion Sensor Battery Level"
 kind = "gauge"
 
 [[inputs.entities]]
-id = "sensor.hue_motion_sensor_2_battery"
-label = "Hue Motion Sensor Battery Level"
+id = "sensor.living_room_motion_sensor_battery"
+label = "Living Room Motion Sensor Battery Level"
 kind = "gauge"
 
 [[inputs.entities]]
-id = "sensor.hue_motion_sensor_3_battery"
-label = "Hue Motion Sensor Battery Level"
+id = "sensor.kitchen_motion_sensor_battery"
+label = "Kitchen Motion Sensor Battery Level"
 kind = "gauge"
 
 [[inputs.entities]]
-id = "sensor.hue_motion_sensor_4_battery"
-label = "Hue Motion Sensor Battery Level"
+id = "sensor.staircase_motion_sensor_battery"
+label = "Staircase Motion Sensor Battery Level"
 kind = "gauge"
 
 [[inputs.entities]]
@@ -54,6 +54,11 @@ kind = "gauge"
 [[inputs.entities]]
 id = "sensor.master_bedroom_window_blind_battery"
 label = "Primary Bedroom Blind Battery Level"
+kind = "gauge"
+
+[[inputs.entities]]
+id = "sensor.drip_irrigation_valve_battery"
+label = "Drip Irrigation Valve Battery Level"
 kind = "gauge"
 
 [[inputs]]
@@ -67,11 +72,18 @@ hours = 24
 mark_as_read = true
 
 [processor]
-type = "anthropic"
-api_key_env = "ANTHROPIC_API_KEY"
-model = "claude-opus-4-6"
+type = "open_ai"
+base_url = "http://192.168.10.3:8080/v1"
+model = "mlx-community/Qwen2.5-14B-Instruct-4bit"
 max_tokens = 1024
 prompt = "Summarize the following content into a concise daily briefing. Focus on the most important information and group related topics together. The briefing should be just paragraphs and readable as a podcast"
+
+# [processor]
+# type = "anthropic"
+# api_key_env = "ANTHROPIC_API_KEY"
+# model = "claude-opus-4-6"
+# max_tokens = 1024
+# prompt = "Summarize the following content into a concise daily briefing. Focus on the most important information and group related topics together. The briefing should be just paragraphs and readable as a podcast"
 
 [[outputs]]
 name = "webpage"

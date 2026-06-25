@@ -1,13 +1,14 @@
 [Unit]
 Description=Dispatcharr
-Requires=dispatcharr-redis.service
+Requires=dispatcharr-redis.service dispatcharr-postgres.service
 
 [Container]
-Image=ghcr.io/dispatcharr/dispatcharr:0.8.0
+Image=ghcr.io/dispatcharr/dispatcharr:latest
 AutoUpdate=registry
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/etc/containers/systemd/volume-data/dispatcharr.container/etc/services:/etc/services:ro
 Volume=/mnt/md0/dispatcharr:/data
+Volume=/etc/containers/systemd/volume-data/dispatcharr.container/app/docker/uwsgi.ini:/app/docker/uwsgi.ini:ro
 Network=end0_vlan.network
 Network=plex-media-server.network
 Network=dispatcharr.network

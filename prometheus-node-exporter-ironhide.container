@@ -7,8 +7,8 @@ AutoUpdate=registry
 SecurityLabelDisable=true
 Volume=/:/host:ro
 Volume=/etc/localtime:/etc/localtime:ro
-Network=observability.network
-Exec=--path.rootfs=/host
+Network=host
+Exec=--path.rootfs=/host --collector.ethtool
 
 [Service]
 TimeoutStartSec=900

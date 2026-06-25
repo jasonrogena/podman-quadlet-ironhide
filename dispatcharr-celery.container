@@ -1,0 +1,23 @@
+[Unit]
+Description=Dispatcharr Celery
+Requires=dispatcharr-redis.service dispatcharr-postgres.service dispatcharr.service
+
+[Container]
+Image=ghcr.io/dispatcharr/dispatcharr:0.8.0
+AutoUpdate=registry
+Exec=/app/docker/entrypoint.celery.sh
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/systemd/volume-data/dispatcharr-celery.container/etc/services:/etc/services:ro
+Volume=/mnt/md0/dispatcharr:/data
+Network=dispatcharr.network
+SecurityLabelDisable=true
+HostName=dispatcharr-celery
+EnvironmentFile=/etc/containers/systemd/env/dispatcharr.container.env
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
