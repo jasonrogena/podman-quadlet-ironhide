@@ -1,0 +1,4 @@
+[Network]
+Internal=false
+NetworkName=nsm-cal-diy
+Subnet=192.168.107.0/24

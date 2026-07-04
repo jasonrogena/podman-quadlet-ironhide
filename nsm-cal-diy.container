@@ -1,0 +1,22 @@
+[Unit]
+Description=NSM Cal.diy
+Requires=nsm-cal-diy-postgres.service
+
+[Container]
+Image=docker.io/calcom/cal.com:main-arm
+AutoUpdate=registry
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/systemd/volume-data/nsm-cal-diy.container/etc/services:/etc/services:ro
+Network=end0_vlan.network
+Network=nsm-cal-diy.network
+SecurityLabelDisable=true
+HostName=book
+EnvironmentFile=/etc/containers/systemd/env/nsm-cal-diy.container.env
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

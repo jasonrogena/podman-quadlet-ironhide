@@ -58,13 +58,13 @@
   "ytdlpLastUpdated": null,
   "ytdlpLastResult": null,
   "rescanLastRun": {
-    "startedAt": "2026-06-25T03:30:00.788Z",
-    "completedAt": "2026-06-25T03:30:01.681Z",
+    "startedAt": "2026-07-04T03:30:00.882Z",
+    "completedAt": "2026-07-04T03:30:06.663Z",
     "trigger": "scheduled",
     "status": "completed",
     "videosUpdated": 0,
     "videosMarkedMissing": 0,
-    "videosScanned": 851,
+    "videosScanned": 926,
     "filesFoundOnDisk": 524,
     "errorMessage": null
   },
@@ -81,6 +81,6 @@
   "embyApiKey": "",
   "embyUserId": "",
   "embyVideoLibraryIds": [],
-  "passwordHash": "$2b$10$ZnkwCaVBLVjZLaTnUQSSk.1.Y33hCTxF9vjItS3zWeUxnS.GOipW.",
+  "passwordHash": "$2b$10$MXmzdaxj43BtXztPikehieEQUYHJBPHKVOhPhZQQYCFoxxDCQQ07y",
   "username": "jrogena"
 }

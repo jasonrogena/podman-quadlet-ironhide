@@ -8,6 +8,12 @@ AutoUpdate=registry
 EnvironmentFile=/etc/containers/systemd/env/immich.env
 SecurityLabelDisable=true
 Pod=immich-server.pod
+HealthCmd=curl -fsS --max-time 3 http://localhost:2283/api/server/ping
+HealthStartPeriod=120s
+HealthInterval=30s
+HealthTimeout=5s
+HealthRetries=3
+HealthOnFailure=kill
 
 [Service]
 TimeoutStartSec=900
