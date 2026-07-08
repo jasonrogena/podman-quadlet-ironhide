@@ -10,6 +10,7 @@ Volume=/dev/dri:/dev/dri
 Volume=plex-media-server-config.volume:/config
 Volume=plex-media-server-transcode.volume:/transcode
 Volume=/etc/containers/systemd/volume-data/plex-media-server.container/etc/services:/etc/services:ro
+Volume=/etc/containers/systemd/volume-data/plex-media-server.container/etc/container-dns/txt:/etc/container-dns/txt:ro
 Network=end0_vlan.network
 Network=plex-media-server.network
 SecurityLabelDisable=true

@@ -8,6 +8,7 @@ SecurityLabelDisable=true
 Volume=/mnt/md0/grafana:/var/lib/grafana
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/etc/containers/systemd/volume-data/grafana.container/etc/services:/etc/services:ro
+Volume=/etc/containers/systemd/volume-data/grafana.container/etc/container-dns/txt:/etc/container-dns/txt:ro
 Network=end0_vlan.network
 Network=observability.network
 HostName=grafana

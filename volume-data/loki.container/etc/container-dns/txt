@@ -1,0 +1,3 @@
+[3100/tcp]
+healthz=/ready
+okstatus=200

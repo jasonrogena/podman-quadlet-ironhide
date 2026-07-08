@@ -1,0 +1,3 @@
+[9696/tcp]
+healthz=/ping
+okstatus=200

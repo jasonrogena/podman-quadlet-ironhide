@@ -7,6 +7,7 @@ AutoUpdate=registry
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=prowlarr-config.volume:/config
 Volume=/etc/containers/systemd/volume-data/prowlarr.container/etc/services:/etc/services:ro
+Volume=/etc/containers/systemd/volume-data/prowlarr.container/etc/container-dns/txt:/etc/container-dns/txt:ro
 Network=end0_vlan.network
 Network=arr.network
 Environment=PUID=1000

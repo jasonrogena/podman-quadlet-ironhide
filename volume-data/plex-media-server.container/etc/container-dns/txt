@@ -1,0 +1,3 @@
+[32400/tcp]
+healthz=/identity
+okstatus=200

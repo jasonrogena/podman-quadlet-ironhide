@@ -7,6 +7,7 @@ AutoUpdate=registry
 Volume=openwebui-data.volume:/app/backend/data
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/etc/containers/systemd/volume-data/openwebui.container/etc/services:/etc/services:ro
+Volume=/etc/containers/systemd/volume-data/openwebui.container/etc/container-dns/txt:/etc/container-dns/txt:ro
 Network=end0_vlan.network
 HostName=oi
 

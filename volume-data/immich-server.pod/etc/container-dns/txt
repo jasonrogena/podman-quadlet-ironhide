@@ -1,0 +1,3 @@
+[2283/tcp]
+healthz=/api/server/ping
+okstatus=200
