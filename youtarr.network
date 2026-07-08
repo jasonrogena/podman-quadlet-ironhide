@@ -1,4 +1,0 @@
-[Network]
-Internal=false
-NetworkName=youtarr
-Subnet=192.168.106.0/24
