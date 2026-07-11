@@ -1,3 +1,6 @@
 [2283/tcp]
+domain=immich.apps.rogena.me
 healthz=/api/server/ping
 okstatus=200
+okmsg={"res":"pong"}
+okmsgtyp=json

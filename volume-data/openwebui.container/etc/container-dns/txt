@@ -1,3 +1,6 @@
 [8080/tcp]
+domain=oi.apps.rogena.me
 healthz=/health
 okstatus=200
+okmsg={"status":true}
+okmsgtyp=json

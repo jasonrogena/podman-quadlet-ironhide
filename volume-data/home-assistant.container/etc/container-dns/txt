@@ -1,0 +1,4 @@
+[8123/tcp]
+domain=home-assistant.apps.rogena.me
+healthz=/auth/authorize
+okstatus=200

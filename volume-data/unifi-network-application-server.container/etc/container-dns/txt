@@ -1,0 +1,4 @@
+[8443/tcp]
+domain=unifi.sapps.rogena.me
+healthz=/manage/account/login
+okstatus=200

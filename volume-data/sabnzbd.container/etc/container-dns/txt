@@ -1,0 +1,4 @@
+[8080/tcp]
+domain=sabnzbd.apps.rogena.me
+healthz=/login/
+okstatus=200

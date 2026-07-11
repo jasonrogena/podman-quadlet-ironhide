@@ -1,3 +1,6 @@
 [32400/tcp]
+domain=plex.apps.rogena.me
 healthz=/identity
 okstatus=200
+okmsg=MediaContainer
+okmsgtyp=raw

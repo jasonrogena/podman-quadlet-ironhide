@@ -1,3 +1,6 @@
 [3000/tcp]
+domain=grafana.apps.rogena.me
 healthz=/api/health
 okstatus=200
+okmsg={"database":"ok"}
+okmsgtyp=json

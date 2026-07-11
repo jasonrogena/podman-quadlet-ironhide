@@ -1,0 +1,4 @@
+[7070/tcp]
+domain=yarr.apps.rogena.me
+healthz=/
+okstatus=200

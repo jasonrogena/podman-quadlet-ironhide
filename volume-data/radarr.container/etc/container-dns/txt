@@ -1,3 +1,6 @@
 [7878/tcp]
+domain=radarr.apps.rogena.me
 healthz=/ping
 okstatus=200
+okmsg={"status":"OK"}
+okmsgtyp=json

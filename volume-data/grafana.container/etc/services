@@ -1,1 +1,1 @@
-grafana	3000/tcp	default_http_authenticated
+grafana	3000/tcp	http

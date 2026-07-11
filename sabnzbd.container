@@ -9,6 +9,7 @@ Volume=/etc/localtime:/etc/localtime:ro
 Volume=sabnzbd-config.volume:/config
 Volume=/mnt/md0/media/downloads/arr:/downloads
 Volume=/etc/containers/systemd/volume-data/sabnzbd.container/etc/services:/etc/services:ro
+Volume=/etc/containers/systemd/volume-data/sabnzbd.container/etc/container-dns/txt:/etc/container-dns/txt:ro
 Network=end0_vlan.network
 Network=arr.network
 SecurityLabelDisable=true

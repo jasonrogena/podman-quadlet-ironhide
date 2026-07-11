@@ -1,0 +1,4 @@
+[9191/tcp]
+domain=dispatcharr.apps.rogena.me
+healthz=/login
+okstatus=200

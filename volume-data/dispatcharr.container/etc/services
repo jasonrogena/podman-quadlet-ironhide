@@ -1,2 +1,2 @@
-frontend	9191/tcp	default_http_authenticated
+frontend	9191/tcp	http
 gunicorn	5656/tcp

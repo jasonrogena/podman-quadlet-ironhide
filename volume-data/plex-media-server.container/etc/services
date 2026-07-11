@@ -1,5 +1,5 @@
 roku	8324/tcp
-ui	32400/tcp	default_http_authenticated
+ui	32400/tcp	http
 dlna	32469/tcp
 gdm-0	32410/udp
 gdm-2	32412/udp

@@ -1,3 +1,6 @@
 [9696/tcp]
+domain=prowlarr.apps.rogena.me
 healthz=/ping
 okstatus=200
+okmsg={"status":"OK"}
+okmsgtyp=json

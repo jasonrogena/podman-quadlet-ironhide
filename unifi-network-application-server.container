@@ -11,6 +11,7 @@ EnvironmentFile=/etc/containers/systemd/env/unifi-network-application.env
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=unifi-network-application-server-config.volume:/config
 Volume=/etc/containers/systemd/volume-data/unifi-network-application-server.container/etc/services:/etc/services:ro
+Volume=/etc/containers/systemd/volume-data/unifi-network-application-server.container/etc/container-dns/txt:/etc/container-dns/txt:ro
 HostName=unifi
 
 [Service]

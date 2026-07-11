@@ -1,3 +1,6 @@
 [8384/tcp]
+domain=syncthing.apps.rogena.me
 healthz=/rest/noauth/health
 okstatus=200
+okmsg={"status":"OK"}
+okmsgtyp=json

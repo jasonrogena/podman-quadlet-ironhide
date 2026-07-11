@@ -1,2 +1,2 @@
-otlp-grpc	4317/tcp	default_grpc_authenticated
+otlp-grpc	4317/tcp	grpc
 prometheus	9090/tcp

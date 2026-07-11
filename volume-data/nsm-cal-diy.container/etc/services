@@ -1,1 +1,1 @@
-book	3000/tcp	default_http_authenticated
+book	3000/tcp	http
