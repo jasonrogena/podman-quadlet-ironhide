@@ -1,0 +1,6 @@
+[8080/tcp]
+domain=blog-comments.apps.rogena.me
+healthz=/healthz
+okstatus=200
+okmsgtyp=raw
+okmsg=ok

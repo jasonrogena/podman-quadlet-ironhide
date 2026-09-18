@@ -1,0 +1,4 @@
+[80/tcp]
+domain=audiobookshelf.apps.rogena.me
+healthz=/healthcheck
+okstatus=200

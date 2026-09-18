@@ -1,0 +1,24 @@
+[Unit]
+Description=Audiobookshelf
+
+[Container]
+Image=ghcr.io/advplyr/audiobookshelf:latest
+AutoUpdate=registry
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=audiobookshelf-config.volume:/config
+Volume=audiobookshelf-metadata.volume:/metadata
+Volume=/mnt/md0/media/audiobooks:/audiobooks
+Volume=/mnt/md0/media/podcasts:/podcasts
+Volume=/etc/containers/systemd/volume-data/audiobookshelf.container/etc/services:/etc/services:ro
+Volume=/etc/containers/systemd/volume-data/audiobookshelf.container/etc/container-dns/txt:/etc/container-dns/txt:ro
+Network=end0_vlan.network
+SecurityLabelDisable=true
+HostName=audiobookshelf
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

@@ -1,0 +1,21 @@
+[Unit]
+Description=threadmail
+
+[Container]
+Image=ghcr.io/jasonrogena/threadmail:dev
+AutoUpdate=registry
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/systemd/volume-data/threadmail.container/etc/threadmail:/etc/threadmail:ro
+Volume=/etc/containers/systemd/volume-data/threadmail.container/etc/services:/etc/services:ro
+Volume=/etc/containers/systemd/volume-data/threadmail.container/etc/container-dns/txt:/etc/container-dns/txt:ro
+Volume=threadmail-data.volume:/var/lib/threadmail
+Network=end0_vlan.network
+EnvironmentFile=/etc/containers/systemd/env/threadmail.env
+HostName=blog-comments
+
+[Service]
+TimeoutStartSec=900
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target

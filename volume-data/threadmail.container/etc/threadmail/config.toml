@@ -1,0 +1,27 @@
+[mailing_list]
+bot_address = "null@rogena.me"
+posting_address = "rogena-me@googlegroups.com"
+subject_prefix = "Blog comments on '"
+subject_suffix = "'"
+body_footer_regex = '--\s*\nYou received this message because you are subscribed to the Google Groups.*'
+
+[web]
+bind_address = "0.0.0.0:8080"
+theme = "light"
+
+# Usernames and passwords come from THREADMAIL_{IMAP,SMTP}_{USERNAME,PASSWORD}
+# (env/threadmail.env), not from this file.
+[imap]
+host = "imap.fastmail.com"
+port = 993
+max_concurrent_searches = 8
+
+[smtp]
+host = "smtp.fastmail.com"
+port = 587
+max_concurrent_submits = 4
+
+[storage]
+# SQLite DB backing the incoming comment cache and the outgoing comment queue.
+# Stored in the threadmail-data.volume named volume, mounted at /var/lib/threadmail.
+path = "/var/lib/threadmail/threadmail.db"
